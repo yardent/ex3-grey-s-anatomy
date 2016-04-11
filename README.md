@@ -141,6 +141,7 @@ set.seed(100)
 
     קהילה 7- 3 קודקודים
   3. modularity- 0.58
+  
   ```sh
   ebc
   mods <- sapply(0:ecount(g), function(i){
@@ -186,6 +187,7 @@ set.seed(100)
 
     קהילה 3- 3 קודקודים
   3. modularity max-0.30449
+  
   ```sh
   mods1 <- sapply(0:ecount(g), function(i){
   cl <- clusters(g2)$membership
