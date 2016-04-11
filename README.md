@@ -144,11 +144,10 @@ set.seed(100)
   ```sh
   ebc
   mods <- sapply(0:ecount(g), function(i){
-    g2 <- delete.edges(g, ebc$removed.edges[seq(length=i)])
     cl <- clusters(g2)$membership
     modularity(g,cl)
   })
-
+  max(mods)
   png(filename="ga_mod_Grivan-Newman.png")
   plot(mods, pch=20)
   dev.off()
@@ -186,16 +185,15 @@ set.seed(100)
     קהילה 2- 5 קודקודים
 
     קהילה 3- 3 קודקודים
-  3. modularity max-0.59
+  3. modularity max-0.30449
   ```sh
   mods1 <- sapply(0:ecount(g), function(i){
-  g2 <- delete.edges(g, fc$removed.edges[seq(length=i)])
   cl <- clusters(g2)$membership
   modularity(g,cl)
   })
+  max(mods1)
   png(filename="ga_mod_fastgreedy.png")
   plot(mods1)
   dev.off()
-  fc
   ```
     ![alt tag](/ga_mod_fastgreedy.png)
