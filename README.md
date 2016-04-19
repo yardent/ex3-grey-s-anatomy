@@ -118,11 +118,11 @@ set.seed(100)
    ![alt tag](/ga_plot_Grivan-Newman.png)
   2. התקבלו 7 קהילות
   ```sh
-  i=max(clusters(g2)$membership)
+  i=max(ebc$membership)
   x=1
   while (x<=i)
   {
-    t<-table(clusters(g2)$membership)[x]
+    t<-table(ebc$membership)[x]
     print(t)
     x=x+1
   }
@@ -172,30 +172,28 @@ set.seed(100)
    ![alt tag](/ga_plot_fastgreedy.png)
   2. התקבלו 3 קהילות
   ```sh
-  i=max(clusters(g2)$membership)
+  i=max(fc$membership)
   x=1
   while (x<=i)
   {
-    t<-table(clusters(g2)$membership)[x]
+    t<-table(fc$membership)[x]
     print(t)
     x=x+1
   }
   ```
-    קהילה 1- 24 קודקודים
+    קהילה 1- 10 קודקודים
 
     קהילה 2- 5 קודקודים
 
-    קהילה 3- 3 קודקודים
-  3. modularity max-0.30449
+    קהילה 3- 4 קודקודים
+
+    קהילה 4- 5 קודקודים
+    
+    קהילה 5- 5 קודקודים
+    
+    קהילה 6- 3 קודקודים
+  3. modularity max-0.59
   
   ```sh
-  mods1 <- sapply(0:ecount(g), function(i){
-  cl <- clusters(g2)$membership
-  modularity(g,cl)
-  })
-  max(mods1)
-  png(filename="ga_mod_fastgreedy.png")
-  plot(mods1)
-  dev.off()
+  fc
   ```
-    ![alt tag](/ga_mod_fastgreedy.png)
