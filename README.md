@@ -104,7 +104,7 @@ set.seed(100)
 ### Grivan-Newman algorithm
 
   1. רשת לפי קוד צבעים התואם את הקהילות
-  ```sh
+  ```
   ebc <- edge.betweenness.community(g, directed=F)
   g2<-delete.edges(g, ebc$removed.edges[seq(length=which.max(mods)-1)])
   V(g)$color=clusters(g2)$membership
@@ -115,9 +115,10 @@ set.seed(100)
   plot(g)
   dev.off()
   ```
+  
    ![alt tag](/ga_plot_Grivan-Newman.png)
   2. התקבלו 7 קהילות
-  ```sh
+  ```
   i=max(ebc$membership)
   x=1
   while (x<=i)
@@ -142,18 +143,9 @@ set.seed(100)
     קהילה 7- 3 קודקודים
   3. modularity- 0.58
   
-  ```sh
-  ebc
-  mods <- sapply(0:ecount(g), function(i){
-    cl <- clusters(g2)$membership
-    modularity(g,cl)
-  })
-  max(mods)
-  png(filename="ga_mod_Grivan-Newman.png")
-  plot(mods, pch=20)
-  dev.off()
   ```
-    ![alt tag](/ga_mod_Grivan-Newman.png)
+  ebc
+  ```
 
 
 
@@ -169,6 +161,7 @@ set.seed(100)
   plot(g)
   dev.off()
   ```
+  
    ![alt tag](/ga_plot_fastgreedy.png)
   2. התקבלו 3 קהילות
   ```sh
@@ -192,8 +185,8 @@ set.seed(100)
     קהילה 5- 5 קודקודים
     
     קהילה 6- 3 קודקודים
-  3. modularity max-0.59
+  3. modularity 0.59
   
-  ```sh
+  ```
   fc
   ```
